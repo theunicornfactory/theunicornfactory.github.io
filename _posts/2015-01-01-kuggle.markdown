@@ -1,0 +1,22 @@
+---
+layout: default
+modal-id: 1
+date: 2015-01-01
+img: cabin.png
+alt: image-alt
+project-date: January 2015
+client: Kuggle Technologies Limited
+category: Full Startup Service
+technologies: Node.JS (backend), Objective-C (iOS), Swift (iOS), Java (Android)
+description:
+  <p>
+  This was a massive undertaking by our studio, spanning almost the whole year
+  </p>
+  <p>
+    We engaged film production companies for the promotional video (in order for Kuggle to get into the AppWorks 11 incubator batch), engaged multiple frontend developers to build the interface, as well as flesh out a loadbalanced backend infrastructure for scaling.
+  </p>
+  <p>
+    Just a summary, Kuggle is a mobile application which helps people connect in the same venue by purpose. See the promotional video for details on how the app works
+  </p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jEhAPnuWQ2Y" frameborder="0" allowfullscreen></iframe>
+---
