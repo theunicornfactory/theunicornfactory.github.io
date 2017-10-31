@@ -6,6 +6,10 @@ Simple add it into "_posts" directory
 
 Refer to the existing entries.
 
+### Image Specs
+
+* For best results, must be at least 900x650
+
 ## Building
 
 ### Install all dependencies
