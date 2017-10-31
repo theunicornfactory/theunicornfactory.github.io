@@ -6,8 +6,8 @@ img: kuggle.png
 alt: Kuggle
 project-date: January 2015
 client: Kuggle Technologies Limited
-category: Full Startup Service
-technologies: Node.JS (backend), Objective-C (iOS), Swift (iOS), Java (Android)
+category: App Development
+technologies: AWS, Docker, Node.JS (backend), Objective-C (iOS), Swift (iOS), Java (Android)
 description:
   <p>
   This was a massive undertaking by our studio, spanning almost the whole year

@@ -1,12 +1,15 @@
 ---
 layout: default
 modal-id: 2
-date: 2014-07-17
-img: cake.png
-alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
-category: Web Development
-description: Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+date: 2016-06-01
+img: styleup.png
+alt: Styleup
+project-date: June 2016
+client: Styleup
+category: App Development
+technologies: AWS, Ruby (backend), Docker, Objective-C (iOS), Swift (iOS)
+description:
+  Styleup is a marketplace for makeup artists and hair stylists.
 
+  The Unicorn Factory's team was engaged initially as a fill in resource for the apps iOS frontend, but later required some backend expertise even though the app used a server less technology as there was some components (the payment engine) that couldn't work well with the newer technology.
 ---
