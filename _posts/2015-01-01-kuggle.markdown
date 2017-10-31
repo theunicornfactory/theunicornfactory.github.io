@@ -2,7 +2,7 @@
 layout: default
 modal-id: 1
 date: 2015-01-01
-img: cabin.png
+img: kuggle.jpg
 alt: image-alt
 project-date: January 2015
 client: Kuggle Technologies Limited
