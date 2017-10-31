@@ -34,10 +34,18 @@ footer:
   copyright: The Unicorn Factory (UFTechnologies OÜ)
   social: On the Web
 
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+# Font awesome icons
 social:
   - title: github
     url: http://github.com/nolim1t
+  - title: key
+    url: https://keybase.io/barryteoh
+  - title: commenting
+    url: https://m.me/barry.teoh
+  - title: envelope
+    url: https://21.co/barryt
+  - title: rss
+    url: http://nolim1t.co/
 
 
 # Build settings
