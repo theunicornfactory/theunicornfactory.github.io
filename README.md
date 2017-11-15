@@ -52,3 +52,7 @@ aws --profile=uftechadmin \
 --certificate-chain=file://./chain1.pem \
 --path=/cloudfront/
 ```
+
+### Go into Cloudfront control panel
+
+Go into control panel and switchover the certificate
