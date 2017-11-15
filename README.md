@@ -49,7 +49,7 @@ docker cp CONTAINERNAME:/etc/letsencrypt/archive/DOMAINNAME .
 Where **cert1.pem** is the certificate, **privkey1.pem** is the private key, **chain1.pem** is the certificate chain, and **YYYYMMDDHHMM** is the timestamp.
 
 ```bash
-aws --profile=uftechadmin \
+aws --profile=uftechadmin iam upload-server-certificate \
 --server-certificate-name=theunicornfactoryYYYYMMDDHHMM \
 --certificate-body=file://./cert1.pem \
 --private-key=file://./privkey1.pem \
