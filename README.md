@@ -62,3 +62,15 @@ aws --profile=uftechadmin iam upload-server-certificate \
 Go into control panel and switchover the certificate.
 
 Optionally you should delete the old certificate run you're done.
+
+#### List certificates
+
+```bash
+aws --profile=uftechadmin iam list-server-certificates
+```
+
+#### Delete command
+
+```bash
+ aws --profile=uftechadmin iam delete-server-certificate --server-certificate-name CERTIFICATENAME
+```
