@@ -32,6 +32,10 @@ jekyll serve
 
 Run the letsencrypt scripts and generate the certificate (they are in [nolim1t/docker-letsencrypt](https://github.com/nolim1t/docker-letsencrypt))
 
+#### Configuration
+
+**S3 Bucket Name** ssl-challenge.theunicornfactory.is
+
 ### Copy the certificate from the container to local file system
 
 If it doesn't exist locally
@@ -55,4 +59,6 @@ aws --profile=uftechadmin \
 
 ### Go into Cloudfront control panel
 
-Go into control panel and switchover the certificate
+Go into control panel and switchover the certificate.
+
+Optionally you should delete the old certificate run you're done.
