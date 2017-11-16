@@ -10,7 +10,7 @@ meta_author: Barry Teoh
 google_verify: googleadefffde0c8f4a39.html
 
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+bing_verify: C275D0B19D815FDCA029C0F0B6627A7D
 
 # Contact form:
 # - static : pass through formspree.io to validate email sending
