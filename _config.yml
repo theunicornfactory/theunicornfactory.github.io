@@ -1,49 +1,36 @@
 title: The Unicorn Factory
 email: enquiries@theunicornfactory.is
-url: https://theunicornfactory.github.io/
+url: https://theunicornfactory.is/
 description: "Unicorn Factory is a developer and designer collective who prides themselves on good work. We offer more than 10 years of development and design experience"
 keywords: "developer,MVP,design,UX,node.js,javascript,apps,iOS,Android,XCode,agency,freelancer"
 skills: "App Developer - Web Developer - Branding - User Experience Designer"
 meta_author: Barry Teoh
-
-# Google webmaster tools
 google_verify: googleadefffde0c8f4a39.html
 
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify: C275D0B19D815FDCA029C0F0B6627A7D
 
-# Contact form:
-# - static : pass through formspree.io to validate email sending
-# - disqus : replace contact form by disqus thread
-# - comment the line below if you want to stick with the default PHP contact form
 contact: static
 
 # If you use disqus you need disqus shortname
 # https://help.disqus.com/customer/portal/articles/466208
 disqus_shortname: unicorn-factory
 
-# Color settings (hex-codes without the leading hash-tag)
 color:
   primary: 3d96fa #3d96fa
   primary-rgb: "61,150,250" #"128,179,255"
   secondary: 374c60 #FD6E8A
   secondary-dark: 161f27 #A2122F
 
-# Footer settings
 footer:
   copyright: The Unicorn Factory (UFTechnologies OÜ | registrikood 14329703 käibemaks 102005233)
   social: On the Web
 
-# Font awesome icons
 social:
   - title: github
-    url: http://github.com/nolim1t
+    url: http://github.com/theunicornfactory
   - title: key
     url: https://keybase.io/barryteoh
-  - title: commenting
-    url: https://m.me/barry.teoh
-  - title: envelope
-    url: https://21.co/barryt
   - title: rss
     url: http://nolim1t.co/
 
