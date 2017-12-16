@@ -1,5 +1,7 @@
 # The Unicorn Factory Site
 
+[![Build Status](https://travis-ci.org/theunicornfactory/theunicornfactory.github.io.svg?branch=master)](https://travis-ci.org/theunicornfactory/theunicornfactory.github.io)
+
 ## Adding a portfolio
 
 Simple add it into "_posts" directory
