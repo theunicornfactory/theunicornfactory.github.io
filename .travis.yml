@@ -1,6 +1,6 @@
 language: ruby
 sudo: required
-
+group: deprecated-2017Q4
 rvm:
     - 2.3.0
 before_install:
