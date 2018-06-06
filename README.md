@@ -1,6 +1,8 @@
 # The Unicorn Factory Site
 
-[![Build Status](https://travis-ci.org/theunicornfactory/theunicornfactory.github.io.svg?branch=master)](https://travis-ci.org/theunicornfactory/theunicornfactory.github.io)
+[![Travis Build Status](https://travis-ci.org/theunicornfactory/theunicornfactory.github.io.svg?branch=master)](https://travis-ci.org/theunicornfactory/theunicornfactory.github.io)
+
+[![Gitlab build status](https://gitlab.com/theunicornfactory/web/badges/master/pipeline.svg)](https://gitlab.com/theunicornfactory/web/commits/master)
 
 ## Adding a portfolio
 
