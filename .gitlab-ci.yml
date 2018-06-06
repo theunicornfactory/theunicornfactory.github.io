@@ -1,12 +1,12 @@
 image: ruby:2.3
 
 before_script:
-    - "sudo apt-get update -qq"
-    - "sudo apt-get install -qq wget curl"
+    - "apt-get update -qq"
+    - "apt-get install -qq wget curl"
     - "gem install bundler"
     - "wget https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
     - "unzip awscli-bundle.zip"
-    - "sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws"
+    - "./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws"
     - "./awscli-bundle/install -b ~/bin/aws"
     - "./awscli-bundle/install -h"
     - "rm -fr _site/awscli-bundle.zip"
