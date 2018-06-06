@@ -15,4 +15,4 @@ deploy:
   stage: deploy
   script:
   - "bundle install"
-  - "rake install"
+  - "rake"
