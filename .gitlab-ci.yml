@@ -2,7 +2,7 @@ image: ruby:2.3
 
 before_script:
     - "apt-get update -qq"
-    - "apt-get install -qq wget curl"
+    - "apt-get install -qq wget curl unzip"
     - "gem install bundler"
     - "wget https://s3.amazonaws.com/aws-cli/awscli-bundle.zip"
     - "unzip awscli-bundle.zip"
