@@ -1,6 +1,6 @@
 image: ruby:2.3
 
-before_install:
+before_script:
     - "sudo apt-get update -qq"
     - "sudo apt-get install -qq wget curl"
     - "gem install bundler"
@@ -11,5 +11,7 @@ before_install:
     - "./awscli-bundle/install -h"
     - "rm -fr _site/awscli-bundle.zip"
     - "rm -fr _site/awscli-bundle"
-install:
-    - "bundle install"
+deploy:
+  stage: deploy
+  script:
+  - "bundle install"
