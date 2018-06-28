@@ -1,0 +1,329 @@
+---
+layout: default
+permalink: /cryptopay/
+---
+<div id="mainpage" class="mainpage">
+  <h2>lightning ⚡️ payment or Crypto payment page</h2>  
+  <div id="blurb">
+    <p>
+      For those who don't use lightning, we also have a fallback link which lets you pay in other crypto (BTC/LTC/DASH/ETH/ETC/ZEC/XMR/DCR). Although we do not offer full payment tracking yet for traditional payments.
+    </p>
+    <p>
+      Simply enter the amount that you wish to pay. To check on the payment result you can use <a href="/check-payment/">this page</a>
+    </p>
+  </div>
+  <div id="lnapp">
+    <div id="paymentwidget">
+      <input id="amountinput" v-model="amount" placeholder="Amount (eg. 1 or 1.50 or 0.50)" />
+      <select id="fiatcode" name="fiatcode"><option>USD</option><option>EUR</option></select>
+      <input id="descriptionform" type="text" value="" placeholder="Invoice Number" />
+      <button id="submitbutton" v-on:click="generateInvoice">Pay with ⚡️ lightning or Crypto</button>
+      <div id="result">
+      </div>
+    </div>
+  </div>
+  <!-- Styling -->
+  <style>
+  .mainpage {
+    margin-left: 10px;
+  }
+  input, select, textarea {
+    color: #646464;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 14pt;
+    font-weight: 400;
+    line-height: 1.75;
+  }
+  /* Button */
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      -moz-transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      -webkit-transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      -ms-transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      background-color: transparent;
+      border: 0;
+      box-shadow: inset 0 0 0 1px rgba(160, 160, 160, 0.3);
+      color: #3c3b3b !important;
+      cursor: pointer;
+      display: inline-block;
+      font-family: "Raleway", Helvetica, sans-serif;
+      font-size: 0.6em;
+      font-weight: 800;
+      height: 4.8125em;
+      letter-spacing: 0.25em;
+      line-height: 4.8125em;
+      padding: 0 2.5em;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+      input[type="submit"]:hover,
+      input[type="reset"]:hover,
+      input[type="button"]:hover,
+      button:hover,
+      .button:hover {
+        box-shadow: inset 0 0 0 1px #2ebaae;
+        color: #2ebaae !important;
+      }
+
+        input[type="submit"]:hover:active,
+        input[type="reset"]:hover:active,
+        input[type="button"]:hover:active,
+        button:hover:active,
+        .button:hover:active {
+          background-color: rgba(46, 186, 174, 0.05);
+        }
+
+      input[type="submit"]:before, input[type="submit"]:after,
+      input[type="reset"]:before,
+      input[type="reset"]:after,
+      input[type="button"]:before,
+      input[type="button"]:after,
+      button:before,
+      button:after,
+      .button:before,
+      .button:after {
+        color: #aaaaaa;
+        position: relative;
+      }
+
+      input[type="submit"]:before,
+      input[type="reset"]:before,
+      input[type="button"]:before,
+      button:before,
+      .button:before {
+        left: -1em;
+        padding: 0 0 0 0.75em;
+      }
+
+      input[type="submit"]:after,
+      input[type="reset"]:after,
+      input[type="button"]:after,
+      button:after,
+      .button:after {
+        left: 1em;
+        padding: 0 0.75em 0 0;
+      }
+
+      input[type="submit"].fit,
+      input[type="reset"].fit,
+      input[type="button"].fit,
+      button.fit,
+      .button.fit {
+        display: block;
+        margin: 0 0 1em 0;
+        width: 100%;
+      }
+
+      input[type="submit"].big,
+      input[type="reset"].big,
+      input[type="button"].big,
+      button.big,
+      .button.big {
+        font-size: 0.7em;
+        padding: 0 3em;
+      }
+
+      input[type="submit"].small,
+      input[type="reset"].small,
+      input[type="button"].small,
+      button.small,
+      .button.small {
+        font-size: 0.5em;
+      }
+
+      input[type="submit"].disabled, input[type="submit"]:disabled,
+      input[type="reset"].disabled,
+      input[type="reset"]:disabled,
+      input[type="button"].disabled,
+      input[type="button"]:disabled,
+      button.disabled,
+      button:disabled,
+      .button.disabled,
+      .button:disabled {
+        -moz-pointer-events: none;
+        -webkit-pointer-events: none;
+        -ms-pointer-events: none;
+        pointer-events: none;
+        color: rgba(160, 160, 160, 0.3) !important;
+      }
+
+        input[type="submit"].disabled:before, input[type="submit"]:disabled:before,
+        input[type="reset"].disabled:before,
+        input[type="reset"]:disabled:before,
+        input[type="button"].disabled:before,
+        input[type="button"]:disabled:before,
+        button.disabled:before,
+        button:disabled:before,
+        .button.disabled:before,
+        .button:disabled:before {
+          color: rgba(160, 160, 160, 0.3) !important;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          background: rgba(160, 160, 160, 0.075);
+          border: none;
+          border: solid 1px rgba(160, 160, 160, 0.3);
+          border-radius: 0;
+          color: inherit;
+          display: block;
+          outline: 0;
+          padding: 0 1em;
+          text-decoration: none;
+          width: 100%;
+        }
+
+          input[type="text"]:invalid,
+          input[type="password"]:invalid,
+          input[type="email"]:invalid,
+          input[type="tel"]:invalid,
+          select:invalid,
+          textarea:invalid {
+            box-shadow: none;
+          }
+
+          input[type="text"]:focus,
+          input[type="password"]:focus,
+          input[type="email"]:focus,
+          input[type="tel"]:focus,
+          select:focus,
+          textarea:focus {
+            border-color: #2ebaae;
+            box-shadow: inset 0 0 0 1px #2ebaae;
+          }
+
+        .select-wrapper {
+          text-decoration: none;
+          display: block;
+          position: relative;
+        }
+
+          .select-wrapper:before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-transform: none !important;
+          }
+
+          .select-wrapper:before {
+            color: rgba(160, 160, 160, 0.3);
+            content: '\f078';
+            display: block;
+            height: 2.75em;
+            line-height: 2.75em;
+            pointer-events: none;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            top: 0;
+            width: 2.75em;
+          }
+
+          .select-wrapper select::-ms-expand {
+            display: none;
+          }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        select {
+          height: 2.75em;
+        }
+
+        textarea {
+          padding: 0.75em 1em;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          display: block;
+          float: left;
+          margin-right: -2em;
+          opacity: 0;
+          width: 1em;
+          z-index: -1;
+        }
+
+          input[type="checkbox"] + label,
+          input[type="radio"] + label {
+            text-decoration: none;
+            color: #646464;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1em;
+            font-weight: 400;
+            padding-left: 2.4em;
+            padding-right: 0.75em;
+            position: relative;
+          }
+
+            input[type="checkbox"] + label:before,
+            input[type="radio"] + label:before {
+              -moz-osx-font-smoothing: grayscale;
+              -webkit-font-smoothing: antialiased;
+              font-family: FontAwesome;
+              font-style: normal;
+              font-weight: normal;
+              text-transform: none !important;
+            }
+
+            input[type="checkbox"] + label:before,
+            input[type="radio"] + label:before {
+              background: rgba(160, 160, 160, 0.075);
+              border: solid 1px rgba(160, 160, 160, 0.3);
+              content: '';
+              display: inline-block;
+              height: 1.65em;
+              left: 0;
+              line-height: 1.58125em;
+              position: absolute;
+              text-align: center;
+              top: 0;
+              width: 1.65em;
+            }
+
+          input[type="checkbox"]:checked + label:before,
+          input[type="radio"]:checked + label:before {
+            background: #3c3b3b;
+            border-color: #3c3b3b;
+            color: #ffffff;
+            content: '\f00c';
+          }
+
+          input[type="checkbox"]:focus + label:before,
+          input[type="radio"]:focus + label:before {
+            border-color: #2ebaae;
+            box-shadow: 0 0 0 1px #2ebaae;
+          }
+
+        input[type="radio"] + label:before {
+          border-radius: 100%;
+        }
+  </style>
+  <!-- end styling -->
+</div>

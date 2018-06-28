@@ -24,10 +24,16 @@ Because this is a ruby site you need to install all the dependencies
 bundle install
 ```
 
+### Install/Update all the Submodules
+
+```bash
+git submodule foreach git pull origin master
+```
+
 ### Install the server
 
 ```bash
-jekyll serve
+bundle exec jekyll serve
 ```
 
 ## SSL Certificate Maintenance
