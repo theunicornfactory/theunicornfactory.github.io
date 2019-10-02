@@ -1,9 +1,9 @@
 /*
   Beta Lightning network addition
-  // Mainnet: https://jenh8onnc8.execute-api.ap-southeast-1.amazonaws.com/awslightningmainnet1/generateinvoice
+  // Mainnet: https://qct016m8b5.execute-api.ap-southeast-1.amazonaws.com/awslightning1/generateinvoice
   // Testnet: https://ddanppib10.execute-api.us-east-2.amazonaws.com/awslightning1/generateinvoice
 */
-const base_url = "https://jenh8onnc8.execute-api.ap-southeast-1.amazonaws.com/awslightningmainnet1/generateinvoice";
+const base_url = "https://qct016m8b5.execute-api.ap-southeast-1.amazonaws.com/awslightning1/generateinvoice";
 var traditionalPaymentURL = 'https://www.coinpayments.net/';
 const check_btc_rates = (callback) => {
   axios.get(base_url + '?showRates=true').then((response) => {
