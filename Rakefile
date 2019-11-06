@@ -1,10 +1,12 @@
-task :default do
-  sh "rm -fr _site"
-  sh "bundle exec jekyll build"
+task :default => [:clean, :preflight, :buildonly] do
   sh "rm -fr _site/awscli-bundle.zip"
   sh "rm -fr _site/awscli-bundle"
   sh "rm -fr _site/ssl-challenge" # Remove that folder before we sync with the other site
   sh "aws s3 sync ./_site s3://theunicornfactory.is --region us-east-1 --exclude '.DS_Store' --exclude 'LICENCE' --exclude 'CNAME' --exclude 'node_modules/*' --exclude '.git/*' --exclude '.gitignore' --exclude 'Gemfile*' --exclude 'Rakefile' --exclude 'awscli-bundle*' --exclude 'ssl-challenge/*' --exclude '*.md' --acl public-read"
+end
+
+task :buildonly => [:clean, :preflight] do
+  sh "bundle exec jekyll build"
 end
 
 task :preflight do
