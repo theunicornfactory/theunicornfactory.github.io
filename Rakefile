@@ -7,6 +7,16 @@ task :default do
   sh "aws s3 sync ./_site s3://theunicornfactory.is --region us-east-1 --exclude '.DS_Store' --exclude 'LICENCE' --exclude 'CNAME' --exclude 'node_modules/*' --exclude '.git/*' --exclude '.gitignore' --exclude 'Gemfile*' --exclude 'Rakefile' --exclude 'awscli-bundle*' --exclude 'ssl-challenge/*' --exclude '*.md' --acl public-read"
 end
 
+task :preflight do
+    puts "Install bundler"
+    sh "bundle install"
+end
+
+task :clean do
+    puts "Cleanup all stuff"
+    sh "rm -fr _site"
+end
+
 task :serve do
   sh "rm -fr _site"
   sh "bundle exec jekyll serve"
