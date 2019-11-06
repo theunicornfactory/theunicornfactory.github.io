@@ -7,6 +7,9 @@ skills: "App Developer - Web Developer - Branding - User Experience Designer"
 meta_author: Barry Teoh
 google_verify: googleadefffde0c8f4a39.html
 
+# Exclude stuff from the build
+exclude: ["README.md", "LICENSE", ".git", "Gemfile", "Rakefile", "Gemfile.lock"]
+
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify: C275D0B19D815FDCA029C0F0B6627A7D
 
